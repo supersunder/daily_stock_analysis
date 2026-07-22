@@ -3173,7 +3173,7 @@ class SearchService:
             item
             for item in candidates
             if item.relevance_category == cls._DIRECT_NEWS_CATEGORY
-            or (item.relevance_score or 0) > 0
+            or (item.relevance_score or 0) >= 0
         ]
         if meaningful_candidates:
             dropped_zero_relevance = len(candidates) - len(meaningful_candidates)
